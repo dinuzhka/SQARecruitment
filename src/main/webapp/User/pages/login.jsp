@@ -13,5 +13,9 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <form action="../User/Welcome" method="post">
+            <input type="text" id="email" name="email" />
+            <input type="submit" />
+        </form>
     </body>
 </html>
