@@ -5,7 +5,9 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -20,9 +22,9 @@ public class EducationLevels implements java.io.Serializable {
     private Short idEducationLevel;
     @Column
     private String educationLevel;
-    @Column
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sectors")
     private Set<EducationalQualifications> educationalQualificationses = new HashSet<EducationalQualifications>(0);
-    @Column
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sectors")
     private Set<Persons> personses = new HashSet<Persons>(0);
 
     public EducationLevels() {
