@@ -20,7 +20,9 @@ public class EducationLevels implements java.io.Serializable {
     private Short idEducationLevel;
     @Column
     private String educationLevel;
+    @Column
     private Set<EducationalQualifications> educationalQualificationses = new HashSet<EducationalQualifications>(0);
+    @Column
     private Set<Persons> personses = new HashSet<Persons>(0);
 
     public EducationLevels() {

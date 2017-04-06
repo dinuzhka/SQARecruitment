@@ -20,6 +20,7 @@ public class EmploymentLevels implements java.io.Serializable {
     private Short idLevelsOfEmployment;
     @Column
     private String employmentLevel;
+    @Column
     private Set<Experiences> experienceses = new HashSet<Experiences>(0);
 
     public EmploymentLevels() {
