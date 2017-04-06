@@ -18,6 +18,17 @@
                <property name="format_sql">false</property>
         -->
  
+        <mapping class="com.sqeteam.sqerecruitment.pojo.EducationLevels"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.EducationalQualifications"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.EmploymentLevels"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.Experiences"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.JobTitles"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.Persons"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.ProfessionalQualifications"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.Referees"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.Sectors"></mapping>
+        <mapping class="com.sqeteam.sqerecruitment.pojo.Skills"></mapping>
+        
  
     </session-factory>
 </hibernate-configuration>
