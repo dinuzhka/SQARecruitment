@@ -3,9 +3,15 @@ package com.sqeteam.sqerecruitment.pojo;
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,9 +28,15 @@ public class JobTitles implements java.io.Serializable {
     private Sectors sectors;
     @Column
     private String jobTitle;
-    @Column
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "job_titles")
     private Set<Experiences> experienceses = new HashSet<Experiences>(0);
-    @Column
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "job_preferences", joinColumns = {
+        @JoinColumn(name = "JobTitles_idJobTitles")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "person_idUser")
+            })
     private Set<Persons> personses = new HashSet<Persons>(0);
 
     public JobTitles() {

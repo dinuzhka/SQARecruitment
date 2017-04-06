@@ -22,9 +22,9 @@ public class EducationLevels implements java.io.Serializable {
     private Short idEducationLevel;
     @Column
     private String educationLevel;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sectors")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "educationLevels")
     private Set<EducationalQualifications> educationalQualificationses = new HashSet<EducationalQualifications>(0);
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sectors")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "educationLevels")
     private Set<Persons> personses = new HashSet<Persons>(0);
 
     public EducationLevels() {

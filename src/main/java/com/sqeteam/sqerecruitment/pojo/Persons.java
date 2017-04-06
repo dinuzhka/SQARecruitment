@@ -6,7 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -87,7 +89,7 @@ public class Persons implements java.io.Serializable {
     private Set<ProfessionalQualifications> professionalQualificationses = new HashSet<ProfessionalQualifications>(0);
     @Column
     private Set<EducationalQualifications> educationalQualificationses = new HashSet<EducationalQualifications>(0);
-    @Column
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "personses")
     private Set<JobTitles> jobTitleses = new HashSet<JobTitles>(0);
 
     public Persons() {
